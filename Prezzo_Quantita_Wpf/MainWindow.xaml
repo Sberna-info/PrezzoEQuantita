@@ -1,0 +1,16 @@
+﻿<Window x:Class="Prezzo_Quantita_Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prezzo_Quantita_Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.492,0.537">
+        <Label x:Name="lblPrezzo" Content="Prezzo" Margin="360,189,0,0"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="txtPrezzo" HorizontalAlignment="Left" Height="23" Margin="340,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="btnMostra" Content="Mostra" HorizontalAlignment="Left" Margin="360,265,0,0" VerticalAlignment="Top" Width="50" Click="btnMostra_Click"/>
+        <Label x:Name="lblStampa" Content=""  HorizontalAlignment="Left" Margin="295,310,0,0" VerticalAlignment="Top" Width="180"/>
+
+    </Grid>
+</Window>
