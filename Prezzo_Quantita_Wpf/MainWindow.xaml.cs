@@ -27,13 +27,44 @@ namespace Prezzo_Quantita_Wpf
 
         private void btnMostra_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (txtPrezzo.Text != "" && txtQuantita.Text != "")
             {
-                double p = double.Parse(txtPrezzo.Text);
-                lblStampa.Content = p;
-            }catch(Exception)
+                try
+                {
+                    double sconto;
+                    if (txtSconto.Text != "")
+                    {
+                        sconto = double.Parse(txtSconto.Text);
+                    }
+                    else
+                        sconto = 0;
+                    double p = double.Parse(txtPrezzo.Text);
+                    int q = int.Parse(txtQuantita.Text);
+                    double tot = p * q;
+                    if (sconto < 0 || sconto > 100)
+                    {
+                        MessageBox.Show("Sconto non valido", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                    }
+                    else if (q >= 20)
+                    {
+                        double ScontoTot = tot / 100;
+                        double ScontoM = ScontoTot * sconto;
+                        double ScontoS = tot - ScontoM;
+                        lblStampa.Content = ScontoS;
+                    }
+                    else if (sconto == 0)
+                        lblStampa.Content = tot;
+
+                }
+                catch (Exception ex)
+                {
+                    lblStampa.Content = ex.Message;
+                }
+            }
+            else
             {
-                lblStampa.Content = "Valore non valido";
+                MessageBox.Show("Dati non corretti", "Errore", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

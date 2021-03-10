@@ -4,13 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prezzo_Quantita_Wpf"
-        mc:Ignorable="d"
+        mc:Ignorable="d"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Title="MainWindow" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.492,0.537">
-        <Label x:Name="lblPrezzo" Content="Prezzo" Margin="360,189,0,0"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <TextBox x:Name="txtPrezzo" HorizontalAlignment="Left" Height="23" Margin="340,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
-        <Button x:Name="btnMostra" Content="Mostra" HorizontalAlignment="Left" Margin="360,265,0,0" VerticalAlignment="Top" Width="50" Click="btnMostra_Click"/>
-        <Label x:Name="lblStampa" Content=""  HorizontalAlignment="Left" Margin="295,310,0,0" VerticalAlignment="Top" Width="180"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="Red" Offset="1"/>
+                <GradientStop Color="#FFAE00FF"/>
+                <GradientStop Color="#FEA900F8" Offset="0.783"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="lblPrezzo" Content="Prezzo" Margin="159,103,0,0"  VerticalAlignment="Top" HorizontalAlignment="Left" Height="42" Width="61"/>
+        <TextBox x:Name="txtPrezzo" HorizontalAlignment="Left" Height="38" Margin="124,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Background="Black" Foreground="White"/>
+        <Button x:Name="btnMostra" Cursor="Hand"  Content="Calcola" HorizontalAlignment="Left" Margin="347,243,0,0" VerticalAlignment="Top" Width="68" Click="btnMostra_Click" Height="33"/>
+        <Label x:Name="lblStampa" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="260,300,0,0" VerticalAlignment="Top" Width="242" Height="42" Background="#FF040404" Foreground="White"/>
+        <Label Content="Quantità" HorizontalAlignment="Left" Margin="348,103,0,0" VerticalAlignment="Top" Width="74" Height="42"/>
+        <TextBox x:Name="txtQuantita" HorizontalAlignment="Left" Height="38" Margin="321,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121" Foreground="White" Background="Black"/>
+        <Label Content="Totale" HorizontalAlignment="Left" Margin="190,300,0,0" VerticalAlignment="Top" Width="65" Height="42"/>
+        <Label Content="Sconto" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="517,103,0,0" VerticalAlignment="Top" Height="26" Width="60"/>
+        <TextBox x:Name="txtSconto" HorizontalAlignment="Left" Height="38" Margin="497,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="Black" Foreground="White"/>
 
     </Grid>
 </Window>
